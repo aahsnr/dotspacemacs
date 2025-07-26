@@ -1,3 +1,150 @@
+# README
+## Keybindings
+Based on the provided Spacemacs configuration, here is a breakdown of the default keybindings for the enabled layers, formatted in Markdown. This configuration uses the `vim` editing style, so the primary leader key is `SPC`. The major-mode leader key, which is a shortcut for `SPC m`, is `,`.
+
+### General Keybindings
+
+Spacemacs provides a discoverable key binding system. Pressing `SPC` will open a `which-key` buffer that lists available commands. You can search for specific key bindings by pressing `SPC ?`.
+
+### Ivy Layer
+
+Ivy is a powerful completion framework. When a command prompts for input in the minibuffer, Ivy takes over to provide a list of candidates.
+
+| Keybinding | Description |
+|---|---|
+| `RET` | Call the default action on the current candidate. |
+| `M-RET` | Same as `RET` but doesn't close the completion minibuffer. |
+| `C-RET` | When completing file names, selects the current directory and starts a new completion session there. |
+| `C-SPC` | Preview the file under the point without leaving Ivy. |
+| `C-o` or `M-SPC` | Enter the transient state for more actions. |
+
+### Git Layer
+
+Spacemacs uses `magit` for Git integration.
+
+| Keybinding | Description |
+|---|---|
+| `SPC g s` | Open the Magit status window. |
+| `SPC g m` | Open the Magit dispatch popup. |
+| `SPC g /` | Search for text in the project using `git grep`. |
+| `SPC g b` | Open a Magit blame for the current file. |
+| `SPC g f f` | View a file at a specific branch or commit. |
+| `SPC g f l` | View the commits log for the current file. |
+| `SPC g t` | Launch the git time machine. |
+
+### Version Control Layer
+
+This layer provides generic version control commands.
+
+| Keybinding | Description |
+|---|---|
+| `SPC g .` | Open the version control transient-state. |
+| `SPC g o` | Open the current file on the remote forge (e.g., GitHub). |
+| `SPC g v =` | Open a hunk under the point in a diff buffer. |
+| `SPC g v g` | Visually annotate the current file (blame). |
+
+### Treemacs Layer
+
+Treemacs provides a file and project explorer sidebar.
+
+| Keybinding | Description |
+|---|---|
+| `SPC f t` or `SPC p t` | Toggle the Treemacs buffer. |
+| `?` | In the Treemacs buffer, show the help menu with all keybindings. |
+| `RET` | Open the selected file or directory. |
+| `g` | Refresh the Treemacs view. |
+| `TAB` | Expand or collapse a directory. |
+
+### Multiple Cursors Layer
+
+This layer enables editing with multiple cursors. The default backend is `evil-mc`.
+
+| Keybinding | Description |
+|---|---|
+| `g r j` | Create a new cursor on the line below. |
+| `g r k` | Create a new cursor on the line above. |
+| `g r m` | Create cursors on all matches of the symbol under the cursor or selection. |
+| `g r I` | Create cursors on all selected lines. |
+| `M-n` | Create and go to the next cursor. |
+| `M-p` | Create and go to the previous cursor. |
+
+### Org Layer
+
+This layer provides extensive support for Org mode. Many keybindings are available under the major-mode leader key (`,`).
+
+| Keybinding | Description |
+|---|---|
+| `SPC a o` | Access Org agenda views. |
+| `SPC m` (`,`) | Major-mode leader key for Org-specific commands. |
+| `, a` | `org-agenda` |
+| `, c` | `org-capture` |
+| `, e` | `org-export-dispatch` |
+| `C-c C-c` | In an Org buffer, this has various context-sensitive actions. |
+
+### Markdown Layer
+
+Provides keybindings for editing Markdown files, primarily under the major-mode leader key.
+
+| Keybinding | Description |
+|---|---|
+| `, c p` | Preview the Markdown file in a browser. |
+| `, t` | Insert a table. |
+| `, i l` | Insert a link. |
+| `, i i` | Insert an image. |
+| `, b` | Toggle bold text. |
+| `, i` | Toggle italic text. |
+
+### Shell Layer
+
+This layer integrates various shells into Emacs.
+
+| Keybinding | Description |
+|---|---|
+| `SPC '` | Toggle the default pop-up shell. |
+| `SPC "` | Open an external terminal emulator in the current directory. |
+| `SPC a t s e` | Toggle a pop-up Eshell. |
+
+### Syntax Checking Layer
+
+This layer uses Flycheck for on-the-fly syntax checking.
+
+| Keybinding | Description |
+|---|---|
+| `SPC e l` | Display a list of all errors in the buffer. |
+| `SPC e n` | Go to the next error. |
+| `SPC e p` | Go to the previous error. |
+| `SPC t s` | Toggle syntax checking on or off for the current buffer. |
+
+### LSP (Language Server Protocol) Layer
+
+Provides IDE-like features using the Language Server Protocol. Keybindings are generally available under `SPC l`.
+
+| Keybinding | Description |
+|---|---|
+| `SPC l d` | Go to definition. |
+| `SPC l r` | Find references. |
+| `SPC l h` | Show documentation for the symbol at point. |
+| `SPC l a a` | Show available code actions. |
+
+### Emacs Lisp Layer
+
+Provides keybindings for working with Emacs Lisp files, primarily under the `,` (major-mode leader) key.
+
+| Keybinding | Description |
+|---|---|
+| `, e b` | Evaluate the buffer. |
+| `, e d` | Evaluate the defun at point. |
+| `, e e` | Evaluate the expression before the point. |
+| `, h d v` | Describe the variable at point. |
+| `, h d f` | Describe the function at point. |
+
+### Better Defaults Layer
+
+This layer enhances some default Emacs behaviors. While primarily for the `emacs` editing style, some features are style-agnostic. For instance, it provides a smarter `C-a` that toggles between the beginning of the line and the first non-whitespace character.
+
+For a complete and interactive list of keybindings, you can always use the `which-key` feature by pressing `SPC` in normal mode.
+## Modularization
+
 Of course! Modularizing your Spacemacs configuration is an excellent way to keep it organized, maintainable, and easier to manage as it grows. The standard way to do this is by using the `~/.spacemacs.d/` directory.
 
 Here is a comprehensive guide on how to convert your single `.spacemacs` file into a modular configuration within `~/.spacemacs.d/` on Linux.

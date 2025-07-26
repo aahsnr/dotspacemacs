@@ -38,11 +38,27 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
-     better-defaults
+     ;; Checkers
+     ;; TODO enable spell-checking for certain modes only
+     syntax-checking
+
+     ;; Completion
+     auto-completion
+     compleseus
+     templates
+     spacemacs-completion
+
+     ;; Emacs
+     (better-defaults :variables
+                      better-defaults-move-to-beginning-of-code-first t
+                      better-defaults-move-to-end-of-code-first nil)
+     helpful
+     (ibuffer :variables
+              ibuffer-group-buffers-by 'projects)
+
+
      emacs-lisp
      git
-     ivy
      lsp
      markdown
      multiple-cursors
@@ -70,7 +86,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(auto-complete)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
